@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente do Mês - Açaí da Cris</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="client.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-container">
+        <img src="assets/logoacai.png" alt="Logo Açaí da Cris" class="logo">
+      </div>
+    <div class="header-container">
+      <h1 class="site-title">Açaí da Cris</h1>
+      <hr class="underline">
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Inícioㅤ|</a></li>
+          <li><a href="pedidos.html">Fazer Pedidoㅤ| </a></li>
+          <li><a href="prices.html">Preçosㅤ|</a></li>
+          <li><a href="client.html">Cliente do Mês </a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="client-of-the-month-page">
+      <h1>Cliente do Mês</h1>
+      <div class="trophy-container">
+        <img src="assets/winner.png" alt="Troféu" class="trophy-icon">
+        <p class="client-name">Cássio Silva</p>
+      </div>
+      <div class="client-photo-container">
+        <img src="assets/clientedomes.jpeg" alt="Cliente do Mês" class="client-photo">
+      </div>
+    </div>
+  </main>
+
+  <footer class="no-footer">
+    © 2024 Açaí da Cris. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    
+    window.onload = function() {
+      // Configuração dos confetes
+      const duration = 15 * 1000, 
+            animationEnd = Date.now() + duration, 
+            defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+  
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+  
+      const interval = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+  
+        if (timeLeft <= 0) {
+          return clearInterval(interval); // Para a animação quando a duração acaba
+        }
+  
+        const particleCount = 50 * (timeLeft / duration); 
+  
+        // Lado esquerdo
+        confetti(
+          Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+          })
+        );
+        // Lado direito
+        confetti(
+          Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+          })
+        );
+      }, 250);
+    };
+  </script>
+  
+
+
+</body>
+</html>

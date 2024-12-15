@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Açaí da Cris - Pedidos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pedidos.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-container">
+        <img src="assets/logoacai.png" alt="Logo Açaí da Cris" class="logo">
+      </div>
+    <div class="header-container">
+      <h1 class="site-title">Açaí da Cris</h1>
+      <hr class="underline">
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Inícioㅤ|</a></li>
+          <li><a href="pedidos.html">Fazer Pedidoㅤ| </a></li>
+          <li><a href="prices.html">Preçosㅤ|</a></li>
+          <li><a href="client.html">Cliente do Mês </a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="order-container">
+      <h2>Faça seu pedido</h2>
+      
+      <div class="order-section">
+        <label for="product">Escolha o Açaí:</label>
+        <select id="product">
+          <option value="tradicional">Açaí Tradicional</option>
+          <option value="banana">Açaí de Banana</option>
+          <option value="kinder">Açaí de Kinder</option>
+        </select>
+      </div>
+
+      <div class="order-section">
+        <label for="size">Escolha o Tamanho:</label>
+        <select id="size">
+          <option value="300ml">300ml</option>
+          <option value="500ml">500ml</option>
+          <option value="700ml">700ml</option>
+        </select>
+      </div>
+
+      <div class="order-section">
+        <label for="filling">Escolha o Recheio:</label>
+        <select id="filling">
+          <option value="só-em-cima">Só em cima</option>
+          <option value="meio-a-meio">Meio-a-Meio</option>
+          <option value="sem-recheio">Sem recheio</option>
+        </select>
+      </div>
+
+      <div class="order-options">
+        <div class="order-complements">
+          <h3>Escolha os Complementos:</h3>
+          <label><input type="checkbox" class="complement" value="Granola"> Granola</label><br>
+          <label><input type="checkbox" class="complement" value="Paçoca"> Paçoca</label><br>
+          <label><input type="checkbox" class="complement" value="Amendoim"> Amendoim</label><br>
+          <label><input type="checkbox" class="complement" value="Granulado colorido"> Granulado colorido</label><br>
+          <label><input type="checkbox" class="complement" value="Leite em Pó"> Leite em Pó</label><br>
+          <label><input type="checkbox" class="complement" value="Jujuba"> Jujuba</label><br>
+          <label><input type="checkbox" class="complement" value="Confete"> Confete</label><br>
+          <label><input type="checkbox" class="complement" value="Flocos de Arroz"> Flocos de Arroz</label>
+        </div>
+
+        <div class="order-toppings">
+          <h3>Escolha as Coberturas:</h3>
+          <label><input type="checkbox" class="topping" value="Chocolate"> Chocolate</label><br>
+          <label><input type="checkbox" class="topping" value="Morango"> Morango</label><br>
+          <label><input type="checkbox" class="topping" value="Caramelo"> Caramelo</label><br>
+          <label><input type="checkbox" class="topping" value="Blue Ice"> Blue Ice</label>
+        </div>
+      </div>
+
+      <div class="order-buttons">
+        <button onclick="placeOrder()">Fazer Pedido</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2024 Açaí da Cris. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function placeOrder() {
+      const product = document.getElementById('product').value;
+      const size = document.getElementById('size').value;
+      const filling = document.getElementById('filling').value;
+
+      // Complementos selecionados
+      const selectedComplements = Array.from(document.querySelectorAll('.complement:checked'))
+        .map(input => input.value);
+      
+      // Coberturas selecionadas
+      const selectedToppings = Array.from(document.querySelectorAll('.topping:checked'))
+        .map(input => input.value);
+      
+      const complementText = selectedComplements.join(', ') || 'Nenhum complemento';
+      const toppingText = selectedToppings.join(', ') || 'Nenhuma cobertura';
+
+      // Monta a mensagem do WhatsApp
+      const whatsappMessage = `Olá, gostaria de pedir um ${product} de tamanho ${size}.\nRecheio: ${filling}\nComplementos: ${complementText}\nCoberturas: ${toppingText}`;
+      const whatsappLink = `https://wa.me/+5521988719326?text=${encodeURIComponent(whatsappMessage)}`;
+
+      // Abre o WhatsApp com a mensagem
+      window.open(whatsappLink, '_blank');
+    }
+  </script>
+</body>
+</html>
