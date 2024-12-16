@@ -31,7 +31,7 @@ header {
 .logo-container {
   position: absolute; 
   left: 30px; 
-  top: 35%; /* Centraliza a logo verticalmente */
+  top: 30%; /* Centraliza a logo verticalmente */
   transform: translateY(-50%); /* Ajusta para centralizar perfeitamente */
 }
 

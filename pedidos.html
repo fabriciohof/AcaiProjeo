@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="pedidos.css">
   <link rel="stylesheet" href="mediaquery.css">
+  <script src="alert.js"></script>
 </head>
 <body>
 
@@ -35,9 +36,10 @@
       <div class="order-section">
         <label for="product">Escolha o Açaí:</label>
         <select id="product">
-          <option value="tradicional">Açaí Tradicional</option>
-          <option value="banana">Açaí de Banana</option>
-          <option value="kinder">Açaí de Kinder</option>
+          <option value="Tradicional">Açaí Tradicional</option>
+          <option value="Banana">Açaí de Banana</option>
+          <option value="Kinder">Açaí de Kinder</option>
+          <option value="Ovomaltine">Açaí de Ovomaltine</option>
         </select>
       </div>
 
@@ -53,9 +55,9 @@
       <div class="order-section">
         <label for="filling">Escolha o Recheio:</label>
         <select id="filling">
-          <option value="só-em-cima">Só em cima</option>
-          <option value="meio-a-meio">Meio-a-Meio</option>
-          <option value="sem-recheio">Sem recheio</option>
+          <option value="Meio-a-meio">Meio-a-Meio</option>
+          <option value="Só-em-cima">Só em cima</option>
+          <option value="Sem-recheio">Sem recheio</option>
         </select>
       </div>
 
@@ -82,8 +84,13 @@
       </div>
 
       <div class="order-buttons">
-        <button onclick="placeOrder()">Fazer Pedido</button>
+        <button onclick="placeOrder()" id="order-button">Fazer Pedido</button>
       </div>
+
+      <!-- Mensagem de horário fechado -->
+  <div id="closed-message" style="display: none; color: red; font-weight: bold; margin-top: 10px;">
+    Desculpe, estamos fechados no momento. Nosso horário de funcionamento é das 12h às 22h.
+  </div>
     </div>
   </main>
 
@@ -109,7 +116,7 @@
       const toppingText = selectedToppings.join(', ') || 'Nenhuma cobertura';
 
       // Monta a mensagem do WhatsApp
-      const whatsappMessage = `Olá, gostaria de pedir um ${product} de tamanho ${size}.\nRecheio: ${filling}\nComplementos: ${complementText}\nCoberturas: ${toppingText}`;
+      const whatsappMessage = `Olá, gostaria de pedir um Açaí 😋\nSabor: ${product}.\nTamanho: ${size}.\nRecheio: ${filling}\nComplementos: ${complementText}\nCobertura: ${toppingText}`;
       const whatsappLink = `https://wa.me/+5521988719326?text=${encodeURIComponent(whatsappMessage)}`;
 
       // Abre o WhatsApp com a mensagem
