@@ -39,6 +39,8 @@
           <option value="Natural">Açaí Natural</option>
           <option value="Banana">Açaí de Banana</option>
           <option value="Kinder">Açaí de Kinder</option>
+          <option value="Oreo">Açaí de Oreo</option>
+          <option value="Nutella">Açaí de Nutella</option>
         </select>
       </div>
 
@@ -115,7 +117,7 @@
       const toppingText = selectedToppings.join(', ') || 'Nenhuma cobertura';
 
       // Monta a mensagem do WhatsApp
-      const whatsappMessage = `Olá, gostaria de pedir um Açaí 😋\nSabor: ${product}.\nTamanho: ${size}.\nRecheio: ${filling}\nComplementos: ${complementText}\nCobertura: ${toppingText}`;
+      const whatsappMessage = `Olá, gostaria de pedir um Açaí \nSabor: ${product}.\nTamanho: ${size}.\nRecheio: ${filling}\nComplementos: ${complementText}\nCobertura: ${toppingText}`;
       const whatsappLink = `https://wa.me/+5521988719326?text=${encodeURIComponent(whatsappMessage)}`;
 
       // Abre o WhatsApp com a mensagem
