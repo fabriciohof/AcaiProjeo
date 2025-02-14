@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentHour = now.getHours();
 
       // Horário de funcionamento
-      return currentHour >= 12 && currentHour < 22;
+      return currentHour >= 12 && currentHour < 23;
     }
 
     // Atualiza o botão de acordo com o horário de funcionamento
