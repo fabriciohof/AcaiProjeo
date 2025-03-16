@@ -12,6 +12,7 @@
     .navbar i {
         display: none;
     }
+    
   
     main {
       padding: 15px;
@@ -29,7 +30,7 @@
     }
   
     .açai-item {
-        margin: 0 auto;
+      margin: 0 auto;
       width: 80%;
       padding: 10px;
     }

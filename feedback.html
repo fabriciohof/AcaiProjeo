@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preços - Açaí da Cris</title>
+  <title>Feedback - Açaí da Cris</title>
   <link rel="stylesheet" href="style/styles.css">
-  <link rel="stylesheet" href="style/prices.css">
+  <link rel="stylesheet" href="style/feedback.css">
   <link rel="stylesheet" href="style/mediaquery.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
   <header class="header">
     <div class="logo-container">
         <img src="assets/logoacai.png" alt="Logo Açaí da Cris" class="logo">
-      </div>
+    </div>
     <div class="header-container">
       <h1 class="site-title">Açaí da Cris</h1>
       <hr class="underline">
@@ -23,52 +23,32 @@
           <li><a href="pedidos.html">Fazer Pedido<i>ㅤ|</i> </a></li>
           <li><a href="prices.html">Preços<i>ㅤ|</i></a></li>
           <li><a href="client.html">Cliente do Mês<i>ㅤ|</i> </a></li>
-          <li><a href="feedback.html">Feedback </a></li>
+          <li><a href="feedback.html" class="active">Feedback </a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="price-box">
-    <h1>Tabela de Preços</h1>
-    <table class="prices-table">
-      <thead>
-        <tr>
-          
-          <th>Tamanho</th>
-          <th>Preço</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>300ml</td>
-          <td>R$10,00</td>
-        </tr>
-        <tr>
-          <td>500ml</td>
-          <td>R$14,00</td>
-        </tr>
-        <tr>
-          <td>700ml</td>
-          <td>R$18,00</td>
-        </tr>
-      </tbody>
-    </table>
+  <main class="feedback-container">
+    <h1>Deixe seu Feedback</h1>
+    <p>Nos conte sua experiência com o Açaí da Cris!</p>
 
-    <article>
-      <h1 class="picole-title">Em breve teremos picolé !</h1>
-  
-    <div class="picole">
-      <img src="assets/picole.jpg" alt="Picolé">
-    </div>
-  
-    </article>
-  
+    <form id="feedbackForm">
+      <label for="name">Seu Nome:</label>
+      <input type="text" id="name" placeholder="Digite seu nome" required>
+
+      <label for="feedback">Seu Feedback:</label>
+      <textarea id="feedback" rows="5" placeholder="Digite sua opinião aqui..." required></textarea>
+
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+
+    <h2>Avaliações dos Clientes</h2>
+    <div id="feedbackList"></div>
   </main>
 
   
-  <footer>
-    © 2025 Açaí da Cris. Todos os direitos reservados.
-  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -207,3 +207,28 @@ footer {
   width: 100%;
   position: relative; /* Garante que o footer fique no final sem ser fixo */
 }
+
+.feedback-item {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: red;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  color: darkred;
+  transform: scale(1.1);
+}
